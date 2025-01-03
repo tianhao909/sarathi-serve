@@ -66,7 +66,11 @@ Run the `plot()` function in  `high_tail_latency.ipynb` to plot the decode compl
 
 sh
 bash ./osdi-experiments/figure-1/generation_stalls.sh
+./osdi-experiments/figure-1/generation_stalls.sh
 这个.sh文件也可以使用笔记本generation_stalls.ipynb中的generate_runs()函数生成。
+
+python -c "import sys; print(sys.path)"
+export PYTHONPATH=$PYTHONPATH:/app/software1/sarathi-serve_osdi/sarathi-serve/
 
 解释结果
 在generation_stalls.ipynb中运行plot()函数来绘制解码完成时间序列。vllm系列将有步骤，而sarathi系列将是平滑的。您还可以分析路径osdi-experiments/figure-1/benchmark_output/<timestamp>/replica_0/plots/decode_completion_time_series.csv中的原始CSV文件。
